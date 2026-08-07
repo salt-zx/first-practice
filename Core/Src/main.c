@@ -131,10 +131,15 @@ int main(void)
     current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
 
     /* while 循环：条件成立就反复执行 {} 里的代码 */
-    while (current_led <= led_count)
+    // while (current_led <= led_count)
+    // {
+    //   blink_led(current_led, blink_times, delay_ms);
+    //   current_led++; /* 等价于 current_led = current_led + 1 */
+    // }
+    while(current_led <= led_count)
     {
-      blink_led(current_led, blink_times, delay_ms);
-      current_led++; /* 等价于 current_led = current_led + 1 */
+      blink_led(current_led, current_led, delay_ms);
+      current_led++;
     }
 
     beep(BEEP_MS);

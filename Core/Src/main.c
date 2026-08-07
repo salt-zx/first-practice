@@ -89,7 +89,7 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
   /* 局部变量：只能在 main 函数内使用 */
-  uint8_t  current_led = 1U;              /* 当前要操作的 LED 编号 */
+  uint8_t  current_led = 2U;              /* 当前要操作的 LED 编号 */
   uint16_t blink_times = BLINK_TIMES;/* 每颗 LED 闪烁次数 */
   uint32_t delay_ms    = DELAY_MS;   /* 亮/灭延时 */
   const uint8_t led_count = LED_COUNT; /* const 表示该变量不允许修改 */

@@ -13,14 +13,14 @@ static uint32_t last_blink_time = 0;
     switch (current_mode)
     {
         case IDEL:
-            led_all_off();
+            led_off();
             buzzer_off();
             break;
 
         case RUN:
             if (HAL_GetTick() - last_blink_time >= 500)
             {
-                led_all_toggle();
+                led_on();
                 last_blink_time = HAL_GetTick();
             }
 
@@ -30,7 +30,7 @@ static uint32_t last_blink_time = 0;
         case ALARM:
             if (HAL_GetTick() - last_blink_time >= 50)
             {
-                led_all_toggle();
+                led_on();
                 last_blink_time = HAL_GetTick();
             }
 

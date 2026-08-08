@@ -24,7 +24,6 @@ void alarm_sys_func(alarm_sys_mode target_mode)
         led_blink_func(50);
 
         HAL_GPIO_TogglePin(BUZZER_GPIO_PORT, BUZZER_PIN);
-        last_time = HAL_GetTick();
+        last_blink_time = HAL_GetTick();
     }
-}
 }

@@ -20,9 +20,9 @@ extern "C" {
 #define LED3_PIN      GPIO_PIN_5
 #define LED4_PIN      GPIO_PIN_6
 
+#define LED_COUNT 4
 /* 函数声明：LED 编号约定为 1~4，分别对应 PB3~PB6 */
-void led_on(uint8_t led_num);
-void led_off(uint8_t led_num);
+void led_blink_func(uint32_t delay_ms);
 
 #ifdef __cplusplus
 }

@@ -21,6 +21,7 @@ extern "C" {
 void buzzer_init(void);
 void buzzer_on(void);
 void buzzer_off(void);
+void beep(uint32_t beep_ms); 
 
 #ifdef __cplusplus
 }

@@ -5,7 +5,7 @@
 #include "led.h"
 
 /* 点亮指定编号的 LED */
-void led_on(uint8_t led_num)
+static void led_on(uint8_t led_num)
 {
     /* switch 根据 led_num 的值选择执行哪一个 case */
     switch (led_num)
@@ -29,7 +29,7 @@ void led_on(uint8_t led_num)
 }
 
 /* 熄灭指定编号的 LED */
-void led_off(uint8_t led_num)
+static void led_off(uint8_t led_num)
 {
     switch (led_num)
     {
@@ -47,5 +47,21 @@ void led_off(uint8_t led_num)
             break;
         default:
             break;
+    }
+}
+
+void led_blink_func(uint32_t delay_ms)
+{
+    for(uint8_t i=0; i<LED_COUNT; i++)
+    {
+        uint8_t led_num = i+1;
+        uint8_t blink_times = led_num;
+        for(uint8_t j=0; j<blink_times; j++)    
+        {
+            led_on(led_num);
+            HAL_Delay(delay_ms);
+            led_off(led_num);
+            HAL_Delay(delay_ms);
+        }
     }
 }

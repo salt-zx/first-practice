@@ -63,7 +63,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+alarm_sys_mode target_mode = IDEL; /* 目标报警系统的工作模式 */
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -128,6 +128,10 @@ int main(void)
 //     /* USER CODE END WHILE */
 
 //     /* USER CODE BEGIN 3 */
+  while (1)
+  {
+    alarm_sys_func(RUN);
+  }
 //     current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
 
 //     /* while 循环：条件成立就反复执行 {} 里的代码 */
